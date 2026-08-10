@@ -12,7 +12,7 @@ export function PromoBanner() {
             Free delivery on your first order
           </h2>
           <p className="mt-1 text-sm opacity-90">
-            On groceries & essentials over $25
+            On groceries & essentials over ₦20,000
           </p>
           <span className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-primary-foreground/15 px-3 py-1 text-xs font-semibold">
             <Truck className="size-3.5" />

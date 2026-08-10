@@ -6,8 +6,8 @@ import { Minus, Plus, ShoppingBag, Trash2, X } from "lucide-react"
 import { useCart } from "@/components/cart-provider"
 import { formatPrice } from "@/lib/products"
 
-const DELIVERY_FEE = 2.99
-const FREE_DELIVERY_THRESHOLD = 25
+const DELIVERY_FEE = 1500
+const FREE_DELIVERY_THRESHOLD = 20000
 
 export function CartSheet() {
   const { isOpen, closeCart, lines, subtotal, setQuantity, removeItem, clear } =
