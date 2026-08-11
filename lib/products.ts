@@ -37,7 +37,8 @@ export const products: Product[] = [
     category: "Produce",
     price: 2000,
     unit: "per bunch",
-    image: "/products/bananas.png",
+    image:
+      "https://images.unsplash.com/photo-1574226516831-e1dff420e9a5?auto=format&fit=crop&w=800&q=80",
     rating: 4.8,
     tags: ["Organic"],
   },
@@ -48,7 +49,8 @@ export const products: Product[] = [
     price: 4500,
     compareAtPrice: 6000,
     unit: "2 pack",
-    image: "/products/avocados.png",
+    image:
+      "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?auto=format&fit=crop&w=800&q=80",
     rating: 4.7,
     tags: ["Deal"],
   },
@@ -58,7 +60,8 @@ export const products: Product[] = [
     category: "Produce",
     price: 3500,
     unit: "per lb",
-    image: "/products/tomatoes.png",
+    image:
+      "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&w=800&q=80",
     rating: 4.6,
   },
   {
@@ -67,7 +70,8 @@ export const products: Product[] = [
     category: "Dairy & Eggs",
     price: 5000,
     unit: "1 gallon",
-    image: "/products/milk.png",
+    image:
+      "https://images.unsplash.com/photo-1585238342021-7f1b5a46b7b9?auto=format&fit=crop&w=800&q=80",
     rating: 4.9,
   },
   {
@@ -77,7 +81,8 @@ export const products: Product[] = [
     price: 7000,
     compareAtPrice: 8500,
     unit: "dozen",
-    image: "/products/eggs.png",
+    image:
+      "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
     rating: 4.8,
     tags: ["Deal"],
   },
@@ -87,7 +92,8 @@ export const products: Product[] = [
     category: "Bakery",
     price: 6000,
     unit: "1 loaf",
-    image: "/products/bread.png",
+    image:
+      "https://images.unsplash.com/photo-1542826438-8ecb19f7e6f3?auto=format&fit=crop&w=800&q=80",
     rating: 4.9,
     tags: ["Fresh"],
   },
@@ -97,7 +103,8 @@ export const products: Product[] = [
     category: "Beverages",
     price: 7500,
     unit: "52 fl oz",
-    image: "/products/orange-juice.png",
+    image:
+      "https://images.unsplash.com/photo-1579896246292-8a4ddf3b6d34?auto=format&fit=crop&w=800&q=80",
     rating: 4.7,
   },
   {
@@ -107,7 +114,8 @@ export const products: Product[] = [
     price: 14000,
     compareAtPrice: 17500,
     unit: "12 oz bag",
-    image: "/products/coffee.png",
+    image:
+      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
     rating: 4.8,
     tags: ["Deal"],
   },
@@ -117,7 +125,8 @@ export const products: Product[] = [
     category: "Household",
     price: 18000,
     unit: "64 loads",
-    image: "/products/detergent.png",
+    image:
+      "https://images.unsplash.com/photo-1581579181113-5f2f4b9f8b5a?auto=format&fit=crop&w=800&q=80",
     rating: 4.6,
   },
   {
@@ -126,7 +135,8 @@ export const products: Product[] = [
     category: "Household",
     price: 5000,
     unit: "24 fl oz",
-    image: "/products/dish-soap.png",
+    image:
+      "https://images.unsplash.com/photo-1582719478176-0a8a1b7d7f2b?auto=format&fit=crop&w=800&q=80",
     rating: 4.5,
   },
   {
@@ -135,7 +145,8 @@ export const products: Product[] = [
     category: "Household",
     price: 11000,
     unit: "6 rolls",
-    image: "/products/paper-towels.png",
+    image:
+      "https://images.unsplash.com/photo-1580913429584-5b9e33c0b3a3?auto=format&fit=crop&w=800&q=80",
     rating: 4.7,
   },
   {
@@ -144,7 +155,8 @@ export const products: Product[] = [
     category: "Personal Care",
     price: 9500,
     unit: "16 fl oz",
-    image: "/products/oil.jpg",
+    image:
+      "https://images.unsplash.com/photo-1595433707802-7d7a1d7b9a1d?auto=format&fit=crop&w=800&q=80",
     rating: 4.6,
   },
 ]
