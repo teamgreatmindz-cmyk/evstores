@@ -75,7 +75,7 @@ export const products: Product[] = [
     price: 7000,
     compareAtPrice: 8500,
     unit: "dozen",
-    image: "/products/eggs.jpg",
+    image: "public/products/eggs.jpg",
     rating: 4.8,
     tags: ["Deal"],
   },
