@@ -1,4 +1,4 @@
-export const WHATSAPP_PHONE = "2348000000000" // Replace with your WhatsApp Business number
+export const WHATSAPP_PHONE = "2348135410111" // Replace with your WhatsApp Business number
 
 export interface CartItem {
   name: string
