@@ -1,14 +1,26 @@
 "use client"
 
+import { useState } from "react"
 import Image from "next/image"
-import { Plus, Star } from "lucide-react"
+import { Plus, Star, MessageCircle } from "lucide-react"
 import { useCart } from "@/components/cart-provider"
 import { formatPrice, type Product } from "@/lib/products"
+import { generateProductWhatsAppMessage, getWhatsAppLink } from "@/lib/whatsapp"
 import { cn } from "@/lib/utils"
 
 export function ProductCard({ product }: { product: Product }) {
   const { addItem } = useCart()
   const onSale = typeof product.compareAtPrice === "number"
+  const [showWhatsApp, setShowWhatsApp] = useState(false)
+
+  const whatsappMessage = generateProductWhatsAppMessage(
+    product.name,
+    1,
+    product.unit,
+    product.price,
+    product.price
+  )
+  const whatsappLink = getWhatsAppLink(whatsappMessage)
 
   return (
     <div className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card">
@@ -59,15 +71,38 @@ export function ProductCard({ product }: { product: Product }) {
             ) : null}
           </div>
 
-          <button
-            type="button"
-            onClick={() => addItem(product)}
-            aria-label={`Add ${product.name} to cart`}
-            className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform active:scale-90"
-          >
-            <Plus className="size-4" />
-          </button>
+          <div className="flex gap-1.5">
+            <button
+              type="button"
+              onClick={() => setShowWhatsApp(!showWhatsApp)}
+              aria-label={`Order ${product.name} via WhatsApp`}
+              className="flex size-9 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white transition-transform active:scale-90 hover:bg-[#20BA5A]"
+            >
+              <MessageCircle className="size-4" />
+            </button>
+
+            <button
+              type="button"
+              onClick={() => addItem(product)}
+              aria-label={`Add ${product.name} to cart`}
+              className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform active:scale-90"
+            >
+              <Plus className="size-4" />
+            </button>
+          </div>
         </div>
+
+        {showWhatsApp && (
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 flex items-center justify-center gap-2 rounded-lg bg-[#25D366] py-2 text-xs font-semibold text-white transition-all active:scale-95"
+          >
+            <MessageCircle className="size-3.5" />
+            Order on WhatsApp
+          </a>
+        )}
       </div>
     </div>
   )
