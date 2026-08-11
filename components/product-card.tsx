@@ -26,7 +26,7 @@ export function ProductCard({ product }: { product: Product }) {
     <div className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card">
       <div className="relative aspect-square overflow-hidden bg-muted">
         <Image
-          src={product.image || "/placeholder.svg"}
+          src={product.image || "/placeholder.jpg"}
           alt={product.name}
           fill
           sizes="(max-width: 448px) 50vw, 224px"
