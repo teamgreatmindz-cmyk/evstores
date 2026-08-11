@@ -5,6 +5,7 @@ export type Category =
   | "Beverages"
   | "Household"
   | "Personal Care"
+  | "Drinks"
 
 export interface Product {
   id: string
@@ -26,6 +27,7 @@ export const categories: Category[] = [
   "Beverages",
   "Household",
   "Personal Care",
+  "Drinks"
 ]
 
 export const products: Product[] = [
