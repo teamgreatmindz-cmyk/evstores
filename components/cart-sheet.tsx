@@ -5,6 +5,8 @@ import Image from "next/image"
 import { Minus, Plus, ShoppingBag, Trash2, X } from "lucide-react"
 import { useCart } from "@/components/cart-provider"
 import { formatPrice } from "@/lib/products"
+import { WhatsAppButton } from "@/components/whatsapp-button"
+import { generateWhatsAppMessage, getWhatsAppLink } from "@/lib/whatsapp"
 
 const DELIVERY_FEE = 1500
 const FREE_DELIVERY_THRESHOLD = 20000
@@ -25,6 +27,16 @@ export function CartSheet() {
   const qualifiesFree = subtotal >= FREE_DELIVERY_THRESHOLD || subtotal === 0
   const delivery = qualifiesFree ? 0 : DELIVERY_FEE
   const total = subtotal + delivery
+
+  const cartItems = lines.map(({ product, quantity }) => ({
+    name: product.name,
+    price: product.price,
+    quantity,
+    unit: product.unit,
+  }))
+
+  const whatsappMessage = generateWhatsAppMessage(cartItems, total)
+  const whatsappLink = getWhatsAppLink(whatsappMessage)
 
   return (
     <div
@@ -82,7 +94,7 @@ export function CartSheet() {
                   >
                     <div className="relative size-16 shrink-0 overflow-hidden rounded-xl bg-muted">
                       <Image
-                        src={product.image || "/placeholder.svg"}
+                        src={product.image || "/placeholder.jpg"}
                         alt={product.name}
                         fill
                         sizes="64px"
@@ -162,12 +174,19 @@ export function CartSheet() {
                 </div>
               </dl>
 
-              <button
-                type="button"
-                className="mt-4 flex w-full items-center justify-center rounded-xl bg-primary py-3.5 text-sm font-semibold text-primary-foreground transition-transform active:scale-[0.99]"
-              >
-                Checkout · {formatPrice(total)}
-              </button>
+              <div className="mt-4 flex flex-col gap-2">
+                <button
+                  type="button"
+                  className="flex w-full items-center justify-center rounded-xl bg-primary py-3.5 text-sm font-semibold text-primary-foreground transition-transform active:scale-[0.99]"
+                >
+                  Checkout · {formatPrice(total)}
+                </button>
+
+                <WhatsAppButton
+                  whatsappLink={whatsappLink}
+                  variant="outline"
+                />
+              </div>
             </div>
           </>
         )}
